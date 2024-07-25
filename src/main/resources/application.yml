@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pageable
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create
+
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          jpa:
+            repository:
+              support:
+                JpaTransactionManager: DEBUG
+        orm:
+          jpa: DEBUG
+    org.hibernate: DEBUG
